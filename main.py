@@ -3,7 +3,7 @@ from pywinauto.application import Application
 import time
 
 vod_link = "https://www.twitch.tv/videos/1639877813"
-speicherpfad = "C:/Users/kramm/OneDrive/Desktop/TwitchChat_Bot/Testfiles/Output"
+path = "C:/Users/users/kramm/OneDrive/Desktop/TwitchChat_Bot/Testfiles/Output"
 
 app = Application(backend="uia").start("F:\youtube, Design usw\CHat/release\TwitchDownloader.exe").connect(title="Twitch Downloader v1.50.4", timeout=100)
 
@@ -29,8 +29,9 @@ except:
 download = app.TwitchDownloader.child_window(title="Download", control_type="Text").wrapper_object()
 download.click_input()
 
-pfad = app.TwitchDownloader.child_window(title="Adressband", control_type="ToolBar").wrapper_object()
-pfad.type_keys(speicherpfad)
-
-
 app.TwitchDownloader.print_control_identifiers()
+
+pfad = app.Speichernunter.child_window(title="0", auto_id="PART_TextBox", control_type="Edit").wrapper_object()
+pfad.click_input()
+
+
